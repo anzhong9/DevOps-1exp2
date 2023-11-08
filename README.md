@@ -16,3 +16,29 @@ resource "aws_instance" "example_instance" {
     Name = "ExampleInstance"
   }
 }
+
+
+
+answrer .tf
+provider "aws" {
+  region = "us-west-2"
+}
+
+resource "aws_instance" "example" {
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = "t2.micro"
+}
+
+
+
+
+answer lambda
+
+def lambda_handler(event, context):
+    print("FIRST LAMBDA FUNCTION")
+    if event['planet'] == 'Earth':
+        return 'Moon'
+    elif event['planet'] == 'Sun':
+        return 'Not a planet'
+    else:
+        return 'No need'
